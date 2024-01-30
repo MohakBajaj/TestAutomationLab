@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center ;
+            width: 100vw;
+            height: 100vh;
+        }
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .calculator input {
+            grid-column: span 4;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .calculator button {
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <button onclick="appendValue(7)">7</button>
+        <button onclick="appendValue(8)">8</button>
+        <button onclick="appendValue(9)">9</button>
+        <button onclick="clearResult()">C</button>
+        <button onclick="appendValue(4)">4</button>
+        <button onclick="appendValue(5)">5</button>
+        <button onclick="appendValue(6)">6</button>
+        <button onclick="appendOperator('+')">+</button>
+        <button onclick="appendValue(1)">1</button>
+        <button onclick="appendValue(2)">2</button>
+        <button onclick="appendValue(3)">3</button>
+        <button onclick="appendOperator('-')">-</button>
+        <button onclick="appendValue(0)">0</button>
+        <button onclick="appendOperator('*')">*</button>
+        <button onclick="appendOperator('/')">/</button>
+        <button onclick="calculate()">=</button>
+    </div>
+
+    <script>
+        let result = document.getElementById('result');
+        let expression = '';
+
+        function appendValue(value) {
+            expression += value;
+            result.value = expression;
+        }
+
+        function appendOperator(operator) {
+            expression += operator;
+            result.value = expression;
+        }
+
+        function calculate() {
+            try {
+                result.value = eval(expression);
+            } catch (error) {
+                result.value = 'Error';
+            }
+        }
+
+        function clearResult() {
+            expression = '';
+            result.value = '';
+        }
+    </script>
+</body>
+</html>
+
+ <!-- Usability Test Questionnaire -->
+    <!-- Q1: How easy was it to understand and use the calculator? -->
+    <!-- Q2: Did you encounter any difficulties while performing calculations? -->
+    <!-- Q3: Were the buttons and input field responsive and intuitive? -->
+    <!-- Q4: Did you find the layout and design of the calculator visually appealing? -->
+    <!-- Q5: Were you able to perform basic arithmetic operations without any issues? -->
+    <!-- Q6: Did you encounter any errors or unexpected behavior while using the calculator? -->
+    <!-- Q7: Do you have any suggestions for improving the calculator's usability? -->
+
+<!-- Instructions to user -->
+<!-- 1. Enter a number -->
+<!-- 2. Click on an operator -->
+<!-- 3. Enter another number -->
+<!-- 4. Click on the equal sign to perform the calculation -->
+<!-- 5. Click on the clear button to reset the calculator -->
+<!-- 6. Repeat steps 1-5 to perform additional calculations -->
+
+<!-- Qualitative Measures -->
+    <!-- 1. Ease of use -->
+    <!-- 2. Ease of learning -->
+    <!-- 3. Efficiency of use -->
+    <!-- 4. Memorability -->
+    <!-- 5. Error frequency and severity -->
+    <!-- 6. Subjective satisfaction -->
+
+<!-- Quantitative Measures -->
+    <!-- 1. Time to complete a task -->
+    <!-- 2. Number of errors made -->
+    <!-- 3. Number of times help is needed -->
+
