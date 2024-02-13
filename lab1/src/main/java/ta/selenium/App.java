@@ -4,9 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class App 
 {
-    public static void main( String[] args )
+
+    public String seleniumTest()
     {
         System.setProperty("webdriver.chrome.driver", "D:\\Programming\\Labs\\TestAutomation\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -62,5 +64,12 @@ public class App
         driver.findElement(By.id("numberInput")).clear();
 
         driver.quit();
+
+        return "Selenium Tests Passed!";
+    }
+    public static void main( String[] args )
+    {
+        App app = new App();
+        app.seleniumTest();
     }
 }

@@ -1,20 +1,22 @@
 package ta.selenium;
 
-import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-/**
- * Unit test for simple App.
- */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue()
+    public void SeleniumTestsFromMain()
     {
-        assertTrue( true );
+        App app = new App();
+        assertEquals("Selenium Tests Passed!", app.seleniumTest());
     }
+
+    @Test
+    public void test0() {
+        assertTrue(true);
+    }
+
 }
